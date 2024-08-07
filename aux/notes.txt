@@ -1,0 +1,46 @@
+https://www.youtube.com/playlist?list=PLgLkBkgzqH2DLUV0WKDTfRp-ZzvGAvqvk
+
+https://laravel.com/docs/10.x
+https://icons.getbootstrap.com/
+https://github.com/ColorlibHQ/AdminLTE/releases/tag/v3.2.0
+https://sweetalert2.github.io/
+
+
+01
+
+composer create-project laravel/laravel:^10.0 crudlaravel
+cd crudlaravel/
+sudo chmod -R 777 storage/logs/
+sudo chmod -R 777 storage/framework/sessions/
+sudo chmod -R 777 storage/framework/views/
+git init
+git remote add origin git@github.com:alcinf/crudlaravel.git
+git add . -A
+git commit -m "01. Start Laravel project"
+git branch -M main
+git push -u origin main
+
+02
+git add . -A
+git commit -m "02. Install AdminLTE template"
+git push -u origin main
+composer require laravel/ui
+php artisan ui bootstrap
+npm install && npm run dev
+php artisan ui bootstrap --auth
+npm install && npm run dev
+php artisan migrate
+git add . -A
+git commit -m "02. Install Bootstrap UI and migrations."
+
+
+git@github.com:alcinf/laravel-blog.git
+
+
+user.email=abraham.lopez@peigenesis.com
+user.name=lopeza
+core.editor=vim
+safe.directory=/var/www/fulcrum/repos/peigenesis-mypei2
+safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86/home
+safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86_old/home
+init.defaultbranch=main
