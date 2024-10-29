@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/adminlte', function () {
-    return view('principal');
+    return view('adminlte');
 });
 
 Auth::routes();
