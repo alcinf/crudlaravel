@@ -45,3 +45,6 @@ git commit -m "02. Install Bootstrap UI and migrations."
 git push -u origin main
 
 03
+git add . -A
+git commit -m "03. Deploy AdminLTE in index"
+git push -u origin main
