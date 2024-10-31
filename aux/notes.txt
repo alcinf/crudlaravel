@@ -6,8 +6,18 @@ https://github.com/ColorlibHQ/AdminLTE/releases/tag/v3.2.0
 https://sweetalert2.github.io/
 
 
-01
+git@github.com:alcinf/crudlaravel.git
 
+user.email=abraham.lopez@peigenesis.com
+user.name=lopeza
+core.editor=vim
+safe.directory=/var/www/fulcrum/repos/peigenesis-mypei2
+safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86/home
+safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86_old/home
+init.defaultbranch=main
+
+
+01
 composer create-project laravel/laravel:^10.0 crudlaravel
 cd crudlaravel/
 sudo chmod -R 777 storage/logs/
@@ -32,15 +42,6 @@ npm install && npm run dev
 php artisan migrate
 git add . -A
 git commit -m "02. Install Bootstrap UI and migrations."
+git push -u origin main
 
-
-git@github.com:alcinf/laravel-blog.git
-
-
-user.email=abraham.lopez@peigenesis.com
-user.name=lopeza
-core.editor=vim
-safe.directory=/var/www/fulcrum/repos/peigenesis-mypei2
-safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86/home
-safe.directory=/mnt/datos/Documents/Fulcrum/repos/PEIGSUP-86_old/home
-init.defaultbranch=main
+03
