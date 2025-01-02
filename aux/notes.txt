@@ -54,3 +54,8 @@ git push -u origin main
 git add . -A
 git commit -m "04. Change login"
 git push -u origin main
+
+#change index with navvar
+git add . -A
+git commit -m "04. Change index with navvar"
+git push -u origin main
