@@ -11,7 +11,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $breadcrums = [];
+        $breadcrum = 'Home';
+        $data = [
+            'title' => 'Bienvenidos al Sistema',
+            'breadcrums' => $breadcrums,
+            'breadcrum' => $breadcrum
+        ];
+        return view('admin.index', $data);
     }
-
 }

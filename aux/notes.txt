@@ -65,3 +65,9 @@ git push -u origin main
 git add . -A
 git commit -m "05. Add users view and separate index of template"
 git push -u origin main
+
+06
+#Add main Grid with READ action (query). Fix title and breadcrumbs in the main view
+git add . -A
+git commit -m "06. Add main Grid with READ action (query). Fix title and breadcrumbs in the main view"
+git push -u origin main

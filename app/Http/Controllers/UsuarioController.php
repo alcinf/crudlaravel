@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UsuarioController extends Controller
 {
@@ -11,7 +12,18 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('admin.usuarios.index');
+      $usuarios = User::all();
+      $breadcrums = [
+        ['name' => 'Home', 'url' => route('admin.index')]
+      ];
+      $breadcrum = 'Usuarios';
+      $data = [
+        'title' => 'Listado de usuarios'
+        ,'breadcrums' => $breadcrums
+        ,'breadcrum' => $breadcrum
+        ,'usuarios' => $usuarios
+      ];
+      return view('admin.usuarios.index', $data);
     }
 
     /**
