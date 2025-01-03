@@ -59,3 +59,9 @@ git push -u origin main
 git add . -A
 git commit -m "04. Change index with navvar"
 git push -u origin main
+
+05
+#add users view and separate index of template
+git add . -A
+git commit -m "05. Add users view and separate index of template"
+git push -u origin main

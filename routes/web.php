@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/adminlte', function () { return view('adminlte'); });
+//Route::get('/adminlte', function () { return view('adminlte'); });
 
 //Route::get('/', function () { return view('admin/'); });
 
 Route::get('/', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
+Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index')->middleware('auth');
