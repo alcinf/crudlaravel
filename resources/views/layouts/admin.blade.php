@@ -280,9 +280,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                @yield('content')
+                <div class="container-fluid">
+                    <div class="row">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
-            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
@@ -300,7 +303,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer fixed-bottom">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+                Developed by <strong><a href="https://www.linkedin.com/in/abrahamlc87/" target="_blank">Abraham LC</a></strong>
             </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights

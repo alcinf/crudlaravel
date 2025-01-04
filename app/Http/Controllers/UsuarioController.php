@@ -7,23 +7,27 @@ use App\Models\User;
 
 class UsuarioController extends Controller
 {
+    private $item = 'usuario';
+    private $items = 'usuarios';
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-      $usuarios = User::all();
-      $breadcrums = [
-        ['name' => 'Home', 'url' => route('admin.index')]
-      ];
-      $breadcrum = 'Usuarios';
-      $data = [
-        'title' => 'Listado de usuarios'
-        ,'breadcrums' => $breadcrums
-        ,'breadcrum' => $breadcrum
-        ,'usuarios' => $usuarios
-      ];
-      return view('admin.usuarios.index', $data);
+        $usuarios = User::all();
+        $breadcrums = [
+            ['name' => 'Home', 'url' => route('admin.index')]
+        ];
+        $breadcrum = ucfirst($this->items);
+        $data = [
+            'title' => 'Listado de ' . $this->items
+            ,'item' => $this->item
+            ,'items' => $this->items
+            ,'breadcrums' => $breadcrums
+            ,'breadcrum' => $breadcrum
+            ,'usuarios' => $usuarios
+        ];
+        return view('admin.usuarios.index', $data);
     }
 
     /**
@@ -31,7 +35,19 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        $breadcrums = [
+            ['name' => 'Home', 'url' => route('admin.index')],
+            ['name' => 'Usuarios', 'url' => route('usuarios.index')]
+        ];
+        $breadcrum = 'Nuevo '.$this->item;
+        $data = [
+            'title' => 'Nuevo ' . $this->item
+            ,'item' => $this->item
+            ,'items' => $this->items
+            ,'breadcrums' => $breadcrums
+            ,'breadcrum' => $breadcrum
+        ];
+        return view('admin.usuarios.create', $data);
     }
 
     /**
