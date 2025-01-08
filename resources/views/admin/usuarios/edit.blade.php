@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="col-md-6">
-    <div class="card card-outline card-primary">
+    <div class="card card-outline card-success">
         <div class="card-header">
-            <h3 class="card-title">Llene los datos</h3>
+            <h3 class="card-title">Actualice los datos</h3>
         </div>
         <div class="card-body">
             <form action="{{ url('/admin/usuarios') }}" method="POST">
@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control" placeholder="Ingrese su nombre" required>
+                            <input type="text" id="name" name="name" value="{{ $row->name }}" class="form-control" placeholder="Ingrese su nombre" required>
                             @error('name') 
                                 <small style="color:red">{{ $message }}</small>
                             @enderror
@@ -26,7 +26,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email"  value="{{ old('email') }}" class="form-control" placeholder="Ingrese su correo electrónico" required>
+                            <input type="email" id="email" name="email"  value="{{ $row->email }}" class="form-control" placeholder="Ingrese su correo electrónico" required>
                             @error('email') 
                                 <small style="color:red">{{ $message }}</small>
                             @enderror
@@ -58,8 +58,8 @@
                         <a href="{{ url('admin/usuarios') }}" class="btn btn-secondary">
                             Cancelar
                         </a>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-floppy"></i> Guardar registro
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-pencil-square"></i> Actualizar registro
                         </button>
                     </div>
                 </div>

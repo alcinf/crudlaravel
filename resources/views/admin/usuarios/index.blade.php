@@ -18,17 +18,18 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th style="text-align: center">Núm.</th>
                         <th>Nombre</th>
                         <th>Correo electrónico</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @php $cont = 0; @endphp
                     @foreach($data as $user)
-
+                    @php $cont++; @endphp
                     <tr>
-                        <td>{{ $user->id }}</td>
+                        <td style="text-align: center">{{ $cont }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td style="text-align: center">
@@ -36,8 +37,8 @@
                                 <a href="{{ route('usuarios.show',$user->id) }}" type="button" class="btn btn-info">
                                     <i class="bi bi-eye"></i>
                                 </a>
-                                <a href="" type="button" class="btn btn-success">
-                                    <i class="bi bi-pencil-square"></i>
+                                <a href="{{ route('usuarios.edit',$user->id) }}" type="button" class="btn btn-success">
+                                    <i class="bi bi-pencil"></i>
                                 </a>
                                 <a href="" type="button" class="btn btn-danger">
                                     <i class="bi bi-trash"></i>

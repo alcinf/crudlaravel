@@ -78,7 +78,6 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //echo $id;
         $row = User::findOrFail($id);
         $breadcrums = [
             ['name' => 'Home', 'url' => route('admin.index')],
@@ -101,7 +100,22 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $row = User::findOrFail($id);
+        $breadcrums = [
+            ['name' => 'Home', 'url' => route('admin.index')],
+            ['name' => 'Usuarios', 'url' => route('usuarios.index')],
+        ];
+        $breadcrum = 'Editar '.$this->item;
+        $data = [
+            'title' => 'Editar '. $this->item
+           ,'item' => $this->item
+           ,'items' => $this->items
+           ,'breadcrums' => $breadcrums
+           ,'breadcrum' => $breadcrum
+           ,'row' => $row
+        ];
+        return view('admin.usuarios.edit', $data);
+        
     }
 
     /**
