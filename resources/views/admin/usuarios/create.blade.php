@@ -55,7 +55,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{ url('usuarios') }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ url('admin/usuarios') }}" class="btn btn-secondary">Cancelar</a>
                             <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i> Guardar registro</button>
                     </div>
                 </div>

@@ -26,11 +26,24 @@
                 </thead>
                 <tbody>
                     @foreach($data as $user)
+
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td></td>
+                        <td style="text-align: center">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{{ route('usuarios.show',$user->id) }}" type="button" class="btn btn-info">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="" type="button" class="btn btn-success">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a href="" type="button" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                              </div>
+                        </td>
                     </tr>
                     @endforeach
                     <!-- /.row -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UsuarioController extends Controller
@@ -63,19 +64,36 @@ class UsuarioController extends Controller
             ,'email' => 'required|unique:users,email'
             ,'password' => 'required|confirmed'
         ]);
-        //User::create([
-        //    'name' => $request->name,
-        //    'email' => $request->email,
-        //    'password' => bcrypt($request->password)
-        //]);
+        $usuario = new User();
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+        $usuario->password =  Hash::make($request->password);
+        $usuario->save();
+
+        return redirect()->route('usuarios.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        //echo $id;
+        $row = User::findOrFail($id);
+        $breadcrums = [
+            ['name' => 'Home', 'url' => route('admin.index')],
+            ['name' => 'Usuarios', 'url' => route('usuarios.index')],
+        ];
+        $breadcrum = 'Detalle de '.$this->item;
+        $data = [
+            'title' => 'Detalle de '. $this->item
+           ,'item' => $this->item
+           ,'items' => $this->items
+           ,'breadcrums' => $breadcrums
+           ,'breadcrum' => $breadcrum
+           ,'row' => $row
+        ];
+        return view('admin.usuarios.show', $data);
     }
 
     /**

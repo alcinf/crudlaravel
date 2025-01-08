@@ -89,3 +89,16 @@ git push -u origin main
 git add . -A
 git commit -m "09. Validations in backend and in the main view"
 git push -u origin main
+
+10
+#Save record in database and return to users grid
+git add . -A
+git commit -m "10. Save record in database and return to users grid"
+git push -u origin main
+
+
+11
+#Show detail view
+git add . -A
+git commit -m "10-11. Save record in database and return to users grid AND Show detail view"
+git push -u origin main
