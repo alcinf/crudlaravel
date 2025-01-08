@@ -113,3 +113,9 @@ git push -u origin main
 git add . -A
 git commit -m "13. Save changes in a record from Edit form"
 git push -u origin main
+
+14
+#Delete record from database
+git add . -A
+git commit -m "14. Delete record from database"
+git push -u origin main

@@ -34,16 +34,24 @@
                         <td>{{ $user->email }}</td>
                         <td style="text-align: center">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('usuarios.show',$user->id) }}" type="button" class="btn btn-info">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-                                <a href="{{ route('usuarios.edit',$user->id) }}" type="button" class="btn btn-success">
-                                    <i class="bi bi-pencil"></i>
-                                </a>
-                                <a href="" type="button" class="btn btn-danger">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-                              </div>
+                                <div>
+                                    <a href="{{ route('usuarios.show',$user->id) }}" type="button" class="btn btn-info">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{{ route('usuarios.edit',$user->id) }}" type="button"
+                                        class="btn btn-success">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                </div>
+                                <form action="{{ route('usuarios.destroy',$user->id) }}" method="POST">
+                                    @csrf
+
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @endforeach
