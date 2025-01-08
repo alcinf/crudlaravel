@@ -8,9 +8,10 @@
             <h3 class="card-title">Actualice los datos</h3>
         </div>
         <div class="card-body">
-            <form action="{{ url('/admin/usuarios') }}" method="POST">
+            <form action="{{ url('/admin/usuarios',$row->id) }}" method="POST">
                 @csrf
                 
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -37,7 +38,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="password">Contraseña</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese su contraseña">
                             @error('password') 
                                 <small style="color:red">{{ $message }}</small>
                             @enderror
@@ -48,7 +49,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="password_confirmation">Confirmar contraseña</label>
-                            <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirme su contraseña" required>
+                            <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="Confirme su contraseña">
                         </div>
                     </div>
                 </div>

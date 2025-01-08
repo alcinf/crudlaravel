@@ -57,8 +57,6 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //$data = request()->all();
-        //return response()->json($data);
         $request->validate([
              'name' => 'required|max:100'
             ,'email' => 'required|unique:users,email'
@@ -121,9 +119,21 @@ class UsuarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        //echo $id;
+        $request->validate([
+             'name' => 'required|max:100'
+            ,'email' => 'required|unique:users,email'
+            ,'password' => 'confirmed'
+        ]);
+        $usuario = User::find($id);
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+        $usuario->password =  Hash::make($request->password);
+        $usuario->save();
+        
+        return redirect()->route('usuarios.index');
     }
 
     /**
