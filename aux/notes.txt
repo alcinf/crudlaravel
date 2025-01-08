@@ -77,3 +77,9 @@ git push -u origin main
 git add . -A
 git commit -m "07. Set view of Create New User. Fields without validations"
 git push -u origin main
+
+08
+#Send data of the form to the controller. Fix url of admin
+git add . -A
+git commit -m "08. Send data of the form to the controller. Fix url of admin"
+git push -u origin main

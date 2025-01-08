@@ -7,7 +7,7 @@
         <div class="card-header">
             <h3 class="card-title">{{ $title }}</h3>
             <div class="card-tools">
-                <a href="{{ url('usuarios/create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ url('admin/usuarios/create') }}" class="btn btn-primary btn-sm">
                     <i class="bi bi-person-fill-add"></i> Nuevo {{ $item }}
                 </a>
             </div>
@@ -25,11 +25,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($usuarios as $usuario)
+                    @foreach($data as $user)
                     <tr>
-                        <td>{{ $usuario->id }}</td>
-                        <td>{{ $usuario->name }}</td>
-                        <td>{{ $usuario->email }}</td>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                         <td></td>
                     </tr>
                     @endforeach

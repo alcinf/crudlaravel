@@ -14,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $query = User::all();
         $breadcrums = [
             ['name' => 'Home', 'url' => route('admin.index')]
         ];
@@ -25,7 +25,7 @@ class UsuarioController extends Controller
             ,'items' => $this->items
             ,'breadcrums' => $breadcrums
             ,'breadcrum' => $breadcrum
-            ,'usuarios' => $usuarios
+            ,'data' => $query
         ];
         return view('admin.usuarios.index', $data);
     }
@@ -55,7 +55,8 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+        return response()->json($data);
     }
 
     /**

@@ -29,5 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/', function () { return view('admin/'); });
 
 Route::get('/', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
-Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index')->middleware('auth');
-Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create')->middleware('auth');
+Route::get('/admin/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index')->middleware('auth');
+Route::get('/admin/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create')->middleware('auth');
+Route::post('/admin/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store')->middleware('auth');
