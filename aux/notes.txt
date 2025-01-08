@@ -55,7 +55,7 @@ git add . -A
 git commit -m "04. Change login"
 git push -u origin main
 
-#change index with navvar
+#change index with navbar
 git add . -A
 git commit -m "04. Change index with navvar"
 git push -u origin main
@@ -82,4 +82,10 @@ git push -u origin main
 #Send data of the form to the controller. Fix url of admin
 git add . -A
 git commit -m "08. Send data of the form to the controller. Fix url of admin"
+git push -u origin main
+
+09
+#Validations in backend and in the main view
+git add . -A
+git commit -m "09. Validations in backend and in the main view"
 git push -u origin main
