@@ -68,7 +68,9 @@ class UsuarioController extends Controller
         $usuario->password =  Hash::make($request->password);
         $usuario->save();
 
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->
+            with('message','Se realizó el registro correctamente')->
+            with('icon','success');
     }
 
     /**
@@ -133,7 +135,9 @@ class UsuarioController extends Controller
         $usuario->password =  Hash::make($request->password);
         $usuario->save();
         
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->
+            with('message','Se actualizó el registro correctamente')->
+            with('icon','info');
     }
 
     /**
@@ -142,6 +146,9 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->
+            with('message','Se eliminó el registro correctamente')->
+            with('icon','error');
+
     }
 }

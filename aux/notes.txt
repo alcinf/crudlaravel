@@ -119,3 +119,9 @@ git push -u origin main
 git add . -A
 git commit -m "14. Delete record from database"
 git push -u origin main
+
+15
+#Adding Sweetalert2 to the main admin page and used in create, update and delete actions
+git add . -A
+git commit -m "15. Adding Sweetalert2 to the main admin page and used in create, update and delete actions"
+git push -u origin main

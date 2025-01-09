@@ -20,6 +20,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -236,8 +239,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();" style="background-color: #d82912">
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                style="background-color: #d82912">
                                 <i class="nav-icon fas"><i class="bi bi-door-closed"></i></i>
                                 <p>
                                     {{ __('Logout') }}
@@ -254,6 +258,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.sidebar -->
         </aside>
 
+        @if (($message = Session::get('message')) && ($icon = Session::get('icon')))
+                        
+        <script>
+            Swal.fire({
+              title: "Mensaje",
+              text: "{{ $message }}",
+              icon: "{{ $icon }}",
+            });
+        </script>
+        @endif
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -266,10 +280,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 @foreach($breadcrums as $piece)
-                                
+
                                 <li class="breadcrumb-item"><a href="{{ $piece['url'] }}">{{ $piece['name'] }}</a></li>
                                 @endforeach
-                                
+
                                 <li class="breadcrumb-item active">{{ $breadcrum }}</li>
                             </ol>
                         </div><!-- /.col -->
@@ -282,6 +296,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+
                         @yield('content')
                     </div>
                 </div>
@@ -303,7 +318,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer fixed-bottom">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Developed by <strong><a href="https://www.linkedin.com/in/abrahamlc87/" target="_blank">Abraham LC</a></strong>
+                Developed by <strong><a href="https://www.linkedin.com/in/abrahamlc87/" target="_blank">Abraham
+                        LC</a></strong>
             </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
