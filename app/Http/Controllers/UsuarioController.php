@@ -137,7 +137,7 @@ class UsuarioController extends Controller
         
         return redirect()->route('usuarios.index')->
             with('message','Se actualizó el registro correctamente')->
-            with('icon','info');
+            with('icon','success');
     }
 
     /**
@@ -148,7 +148,7 @@ class UsuarioController extends Controller
         User::destroy($id);
         return redirect()->route('usuarios.index')->
             with('message','Se eliminó el registro correctamente')->
-            with('icon','error');
+            with('icon','success');
 
     }
 }

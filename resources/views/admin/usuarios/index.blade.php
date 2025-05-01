@@ -45,12 +45,36 @@
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                 </div>
-                                <form action="{{ route('usuarios.destroy',$user->id) }}" method="POST">
+                                <form action="{{ route('usuarios.destroy',$user->id) }}" method="POST" onclick="ask_del{{ $user->id }}(event)"
+                                    id="form_del{{ $user->id }}">
                                     @csrf
 
                                     @method('DELETE')
+
                                     <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                 </form>
+
+                                <script>
+                                    function ask_del{{ $user->id }}(event){
+                                        event.preventDefault();
+                                        Swal.fire({
+                                            title: "Eliminar registro",
+                                            text: "¿Está seguro de eliminar el registro?",
+                                            icon: 'question',
+                                            showDenyButton: true,
+                                            confirmButtonText: "Eliminar",
+                                            confirmButtonColor: "#3085d6",
+                                            denyButtonColor: "#d33",
+                                            denyButtonText: "Cancelar"
+                                          }).then((result) => {
+                                            if (result.isConfirmed) {
+                                              var form = $('#form_del{{ $user->id }}');
+                                              form.submit();
+                                            }
+                                          });
+                                    }
+                                </script>
+                        
                             </div>
                         </td>
                     </tr>

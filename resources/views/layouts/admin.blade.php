@@ -259,7 +259,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </aside>
 
         @if (($message = Session::get('message')) && ($icon = Session::get('icon')))
-                        
+        
         <script>
             Swal.fire({
               title: "Mensaje",
